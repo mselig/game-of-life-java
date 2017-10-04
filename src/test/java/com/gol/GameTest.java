@@ -57,7 +57,7 @@ public class GameTest
     public void testExampleGame()
     {
         game = new Game();
-        assertEquals(game.evolve().startsWith(""
+        assertEquals(game.evolve().endsWith(""
                 + "--------------------------------------------------------------------------------\n"
                 + "evolution cycle: 011\n"
                 + "                      \n"
