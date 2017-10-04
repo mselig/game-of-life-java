@@ -123,6 +123,9 @@ public class TwoDimensionalGridTest
                     {0, 0, 1}
                 };
         assertEquals(grid.equals(new TwoDimensionalGrid(cells)), false);
+        cells = new int[][]{{1}};
+        assertEquals(grid.equals(new TwoDimensionalGrid(cells)), false);
+
     }
 
 
