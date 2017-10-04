@@ -62,5 +62,13 @@ public class PrimitiveCellTest
         assertEquals((new PrimitiveCell(false)).evolve(Integer.MAX_VALUE).isAlive(), false);
     }
 
+
+    @Test
+    public void testToString()
+    {
+        assertEquals((new PrimitiveCell(true )).toString(), "[]");
+        assertEquals((new PrimitiveCell(false)).toString(), "  ");
+    }
+
 }
 

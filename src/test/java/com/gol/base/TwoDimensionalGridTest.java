@@ -55,7 +55,7 @@ public class TwoDimensionalGridTest
                 {
                     {0, 0, 1, 0, 0},
                     {0, 1, 0, 1, 0},
-                    {1, 0, 1, 0, 1},
+                    {1, 0, 1, 0, 1}
                 };
         grid = new TwoDimensionalGrid(cells);
         assertEquals(grid.getNumberOfRows(),    3);
@@ -106,6 +106,27 @@ public class TwoDimensionalGridTest
 
 
     @Test
+    public void testEquals()
+    {
+        int[][] cells = new int[][]
+                {
+                    {0, 0, 0},
+                    {0, 0, 0}
+                };
+        grid = new TwoDimensionalGrid(cells).evolve();
+        assertEquals(grid.equals(null),                          false);
+        assertEquals(grid.equals(cells),                         false);
+        assertEquals(grid.equals(new TwoDimensionalGrid(cells)), true);
+                cells = new int[][]
+                {
+                    {0, 0, 0},
+                    {0, 0, 1}
+                };
+        assertEquals(grid.equals(new TwoDimensionalGrid(cells)), false);
+    }
+
+
+    @Test
     public void testEvolutionByStaticTub()
     {
         int[][] cells = new int[][]
@@ -114,7 +135,7 @@ public class TwoDimensionalGridTest
                     {0, 0, 1, 0, 0},
                     {0, 1, 0, 1, 0},
                     {0, 0, 1, 0, 0},
-                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
                 };
         grid = new TwoDimensionalGrid(cells).evolve();
         assertEquals(new TwoDimensionalGrid(cells), grid);
@@ -131,7 +152,7 @@ public class TwoDimensionalGridTest
                     {0, 1, 0, 0, 1, 0},
                     {0, 1, 0, 0, 1, 0},
                     {0, 0, 1, 0, 0, 0},
-                    {0, 0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0, 0}
                 };
         grid = new TwoDimensionalGrid(cells).evolve();
                 cells = new int[][]
@@ -141,7 +162,7 @@ public class TwoDimensionalGridTest
                     {0, 0, 1, 1, 1, 0},
                     {0, 1, 1, 1, 0, 0},
                     {0, 0, 0, 0, 0, 0},
-                    {0, 0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0, 0}
                 };
         assertEquals(new TwoDimensionalGrid(cells), grid);
     }
@@ -156,7 +177,7 @@ public class TwoDimensionalGridTest
                     {1, 0, 1, 0, 0},
                     {0, 1, 1, 0, 0},
                     {0, 0, 0, 0, 0},
-                    {0, 0, 0, 0, 0},
+                    {0, 0, 0, 0, 0}
                 };
         grid = new TwoDimensionalGrid(cells)
                 .evolve().evolve().evolve().evolve().evolve()
@@ -164,6 +185,16 @@ public class TwoDimensionalGridTest
                 .evolve().evolve().evolve().evolve().evolve()
                 .evolve().evolve().evolve().evolve().evolve();
         assertEquals(new TwoDimensionalGrid(cells), grid);
+    }
+
+
+    @Test
+    public void testToString()
+    {
+        int[][] cells = new int[][]{{0}};
+        assertEquals(new TwoDimensionalGrid(cells).toString().startsWith(""
+                + "--------------------------------------------------------------------------------\n"
+                + "evolution cycle: 000\n"), true);
     }
 
 }
