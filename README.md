@@ -1,1 +1,2 @@
-# GameOfLife
+# Convey's Game of Life
+
