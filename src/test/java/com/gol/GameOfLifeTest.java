@@ -19,5 +19,19 @@ public class GameOfLifeTest
         }
     }
 
+
+    @Test
+    public void testGameOfLifeExceptions()
+    {
+        try
+        {
+            new GameOfLife();
+        }
+        catch(Exception exception)
+        {
+            exception.printStackTrace();
+        }
+    }
+
 }
 

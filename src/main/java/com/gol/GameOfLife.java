@@ -1,7 +1,7 @@
 package com.gol;
 
 
-abstract class GameOfLife
+public class GameOfLife
 {
     public static void main(String[] arguments) throws Exception
     {
