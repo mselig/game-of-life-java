@@ -3,10 +3,10 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
     xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
-    
+
     <groupId>gol.com</groupId>
     <artifactId>GameOfLive</artifactId>
-    <version>1.0</version>    
+    <version>1.0</version>
     <packaging>jar</packaging>
 
     <name>GameOfLife</name>
@@ -32,7 +32,7 @@
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
             <version>0.7.9</version>
-        </dependency>        
+        </dependency>
     </dependencies>
 
     <build>
@@ -52,27 +52,17 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.2.1</version>
-                <executions>
-                    <execution>
-                        <id>default-cli</id>
-                        <goals>
-                            <goal>java</goal>
-                        </goals>
-                        <configuration>
-                            <mainClass>com.gol.GameOfLife</mainClass>
-                        </configuration>
-                    </execution>
-                </executions>
+                <groupId>org.eluder.coveralls</groupId>
+                <artifactId>coveralls-maven-plugin</artifactId>
+                <version>4.3.0</version>
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
-                    <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.7.9</version>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.7.9</version>
                 <executions>
                     <execution>
+                        <id>prepare-agent</id>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
@@ -86,9 +76,9 @@
                     </execution>
                 </executions>
             </plugin>
-        </plugins> 
+        </plugins>
     </build>
-  
+
     <reporting>
         <plugins>
             <plugin>
@@ -96,7 +86,7 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <reportSets>
                     <reportSet>
-                        <reports>              
+                        <reports>
                             <report>report</report>
                         </reports>
                     </reportSet>
