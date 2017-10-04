@@ -2,7 +2,7 @@ package com.gol.base;
 
 
 /**
- *  implements an interface for grids in Convey's Game of Life
+ *  implements an interface for grids in Conway's Game of Life
  */
 public interface Grid
 {

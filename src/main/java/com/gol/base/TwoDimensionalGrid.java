@@ -2,7 +2,7 @@ package com.gol.base;
 
 
 /**
- *  implements a two-dimensional grid of cells in Convey's Game of Life
+ *  implements a two-dimensional grid of cells in Conway's Game of Life
  */
 public class TwoDimensionalGrid implements Grid
 {

@@ -1,7 +1,7 @@
 package com.gol.base;
 
 /**
- *  implements the absolute minimum of Convey's Game of Life
+ *  implements the absolute minimum of Conway's Game of Life
  */
 public class PrimitiveCell
 {

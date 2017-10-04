@@ -2,7 +2,7 @@ package com.gol.base;
 
 
 /**
- *  implements a cell, which is aware of its live neighbours, in Convey's Game of Life
+ *  implements a cell, which is aware of its live neighbours, in Conway's Game of Life
  */
 public class Cell extends PrimitiveCell
 {
