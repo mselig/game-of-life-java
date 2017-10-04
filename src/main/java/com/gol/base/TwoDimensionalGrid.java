@@ -1,5 +1,9 @@
 package com.gol.base;
 
+
+/**
+ *  implements a two-dimensional grid of cells in Convey's Game of Life
+ */
 public class TwoDimensionalGrid implements Grid
 {
     private final int rows;
@@ -9,6 +13,17 @@ public class TwoDimensionalGrid implements Grid
     private Cell[][] grid;
 
 
+    /**
+     *  constructor by size parameters
+     *
+     *  @param numberOfRows
+     *      integer number of rows
+     *  @param numberOfColumns
+     *      integer number of columns
+     *
+     *  @throws IllegalArgumentException
+     *      in case of encountering non-positive integers
+     */
     public TwoDimensionalGrid(int numberOfRows, int numberOfColumns) throws IllegalArgumentException
     {
         if(numberOfRows < 1)
@@ -33,6 +48,12 @@ public class TwoDimensionalGrid implements Grid
     }
 
 
+    /**
+     *  constructor by integer array
+     *
+     *  @param cells
+     *      array of array of integers indicating the cells' live states
+     */
     public TwoDimensionalGrid(int[][] cells)
     {
         if(cells == null)
@@ -61,6 +82,9 @@ public class TwoDimensionalGrid implements Grid
     }
 
 
+    /**
+     *  @see com.gol.base.Grid#evolve()
+     */
     @Override
     public TwoDimensionalGrid evolve()
     {
@@ -70,7 +94,9 @@ public class TwoDimensionalGrid implements Grid
     }
 
 
-
+    /**
+     *  invokes a refresh for each cell
+     */
     private void refreshCells()
     {
         for(int row = 0; row < rows; ++row)
@@ -83,6 +109,17 @@ public class TwoDimensionalGrid implements Grid
     }
 
 
+    /**
+     *  provides the neighbouring cells of a certain cell in the grid
+     *
+     *  @param row
+     *      integer row of the cell
+     *  @param col
+     *      integer column of the cell
+     *
+     *  @return neighbours
+     *      array of neighbouring cells
+     */
     private Cell[] getNeighbours(int row, int col)
     {
         Cell[] neighbours = new Cell[8];
@@ -98,6 +135,9 @@ public class TwoDimensionalGrid implements Grid
     }
 
 
+    /**
+     *  invokes an evolution for each cell
+     */
     private void evolveCells()
     {
         for(int row = 0; row < rows; ++row)
@@ -111,6 +151,9 @@ public class TwoDimensionalGrid implements Grid
     }
 
 
+    /**
+     *  @see com.gol.base.Grid#equals(Object)
+     */
     @Override
     public boolean equals(Object object)
     {
@@ -142,8 +185,7 @@ public class TwoDimensionalGrid implements Grid
 
 
     /**
-     *
-     *  @return asString
+     *  @see com.gol.base.Grid#toString()
      */
     @Override
     public String toString()
@@ -162,6 +204,17 @@ public class TwoDimensionalGrid implements Grid
     }
 
 
+    /**
+     *  provides a certain cell in the grid
+     *
+     *  @param row
+     *      integer row of the cell
+     *  @param col
+     *      integer column of the cell
+     *
+     *  @return cell
+     *      the cell in the specified row and column
+     */
     private Cell getCell(int row, int col)
     {
         row = wrapIndex(row, rows);
@@ -170,6 +223,17 @@ public class TwoDimensionalGrid implements Grid
     }
 
 
+    /**
+     *  wraps an index into the interval [0, limit[
+     *
+     *  @param index
+     *      integer index to be wrapped
+     *  @param limit
+     *      integer boundary limit
+     *
+     *  @return wrappedIndex
+     *      wrapped integer index
+     */
     private int wrapIndex(int index, int limit)
     {
         if(index < 0)
@@ -184,18 +248,33 @@ public class TwoDimensionalGrid implements Grid
     }
 
 
+    /**
+     *  provides the number of rows of the grid
+     *
+     *  @return numberOfRows
+     *      integer number of rows
+     */
     public int getNumberOfRows()
     {
         return rows;
     }
 
 
+    /**
+     *  provides the number of columns of the grid
+     *
+     *  @return numberOfColumns
+     *      integer number of columns
+     */
     public int getNumberOfColumns()
     {
         return columns;
     }
 
 
+    /**
+     *  @see com.gol.base.Grid#getEvolutionCycle()
+     */
     @Override
     public int getEvolutionCycle()
     {

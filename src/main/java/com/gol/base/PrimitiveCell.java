@@ -1,14 +1,18 @@
 package com.gol.base;
 
-
+/**
+ *  implements the absolute minimum of Convey's Game of Life
+ */
 public class PrimitiveCell
 {
     private boolean isAlive;
 
 
     /**
+     *  Boolean constructor
      *
      *  @param isAlive
+     *      Boolean indicating the cell's live state
      */
     public PrimitiveCell(boolean isAlive)
     {
@@ -17,7 +21,7 @@ public class PrimitiveCell
 
 
     /**
-     *
+     *  random constructor that dices a live state
      */
     public PrimitiveCell()
     {
@@ -26,7 +30,10 @@ public class PrimitiveCell
 
 
     /**
+     *  integer constructor that interprets zero, and only zero, as dead
      *
+     *  @param isAlive
+     *      integer indicating the cell's live state
      */
     public PrimitiveCell(int isAlive)
     {
@@ -35,14 +42,16 @@ public class PrimitiveCell
 
 
     /**
-     *
-     *
-     *  1. Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.
-     *  2. Any live cell with two or three live neighbours lives on to the next generation.
-     *  3. Any live cell with more than three live neighbours dies, as if by overpopulation.
-     *  4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+     *  evolves the cell's life state according to Conway's rules:<p>
+     *  <ul>
+     *      <li>1. Any live cell with fewer than two live neighbours dies, as if caused by <i>underpopulation</i>.
+     *      <li>2. Any live cell with two or three live neighbours lives on to the next generation.
+     *      <li>3. Any live cell with more than three live neighbours dies, as if by <i>overpopulation</i>.
+     *      <li>4. Any dead cell with exactly three live neighbours becomes a live cell, as if by <i>reproduction</i>.
+     *  </ul>
      *
      *  @param numberOfLivingNeighbours
+     *      integer specifying the number of living neighbours
      */
     protected PrimitiveCell evolve(int numberOfLivingNeighbours)
     {
@@ -62,8 +71,10 @@ public class PrimitiveCell
 
 
     /**
+     *  provides the cell's live state
      *
      *  @return isAlive
+     *      Boolean indicating the cell's live state
      */
     public boolean isAlive()
     {
@@ -72,8 +83,10 @@ public class PrimitiveCell
 
 
     /**
+     *  provides the cell's live state as String
      *
      *  @return asString
+     *      String indicating the cell's live state
      */
     @Override
     public String toString()
