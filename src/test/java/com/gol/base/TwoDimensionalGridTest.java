@@ -13,7 +13,7 @@ public class TwoDimensionalGridTest
 
 
     @Test
-    public void testGridConstructor()
+    public void testSizeConstructor()
     {
         grid = new TwoDimensionalGrid(       1, 9);
         assertEquals(grid.getNumberOfRows(), 1);
@@ -25,7 +25,7 @@ public class TwoDimensionalGridTest
 
 
     @Test
-    public void testGridConstructorExceptions()
+    public void testSizeConstructorExceptions()
     {
         try
         {
@@ -49,7 +49,7 @@ public class TwoDimensionalGridTest
 
 
     @Test
-    public void testCellConstructor()
+    public void testArrayConstructor()
     {
         int[][] cells = new int[][]
                 {
@@ -64,7 +64,7 @@ public class TwoDimensionalGridTest
 
 
     @Test
-    public void testCellConstructorExceptions()
+    public void testArrayConstructorExceptions()
     {
         try
         {
@@ -97,7 +97,7 @@ public class TwoDimensionalGridTest
 
 
     @Test
-    public void testEvolutionCycle()
+    public void testGridEvolutionCycle()
     {
         grid = new TwoDimensionalGrid(1, 1);
         assertEquals(grid.getEvolutionCycle(),          0);
@@ -106,7 +106,7 @@ public class TwoDimensionalGridTest
 
 
     @Test
-    public void testEquals()
+    public void testGridEquals()
     {
         int[][] cells = new int[][]
                 {

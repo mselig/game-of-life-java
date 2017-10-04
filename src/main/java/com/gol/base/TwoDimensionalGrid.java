@@ -1,6 +1,6 @@
 package com.gol.base;
 
-public class TwoDimensionalGrid
+public class TwoDimensionalGrid implements Grid
 {
     private final int rows;
     private final int columns;
@@ -61,6 +61,7 @@ public class TwoDimensionalGrid
     }
 
 
+    @Override
     public TwoDimensionalGrid evolve()
     {
         refreshCells();
@@ -195,6 +196,7 @@ public class TwoDimensionalGrid
     }
 
 
+    @Override
     public int getEvolutionCycle()
     {
         return cycle;
