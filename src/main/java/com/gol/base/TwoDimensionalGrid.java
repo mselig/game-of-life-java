@@ -6,6 +6,15 @@ package com.gol.base;
  */
 public class TwoDimensionalGrid implements Grid
 {
+    public static final int[][] ExampleCells = new int[][]
+            {
+                {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+                {1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+            };
+
     private final int rows;
     private final int columns;
 

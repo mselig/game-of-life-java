@@ -38,10 +38,10 @@ public interface Grid
 
 
     /**
-     *  returns the gridscell's live state as String
+     *  provides the grids's complete state
      *
      *  @return asString
-     *      String indicating the cell's live state
+     *      String indicating the grid's complete state
      */
     @Override
     public String toString();
