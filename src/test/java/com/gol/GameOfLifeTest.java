@@ -15,6 +15,10 @@ public class GameOfLifeTest
     @Test
     public void testConstructor()
     {
+        game = new GameOfLife(new String[]{"1", "2", "3", "4"});
+        assertEquals(game.evolve(0).startsWith(""
+                + "--------------------------------------------------------------------------------\n"
+                + "evolution cycle: 000\n"), true);
         game = new GameOfLife(new String[]{"1", "2", "3"});
         assertEquals(game.evolve(0).startsWith(""
                 + "--------------------------------------------------------------------------------\n"
